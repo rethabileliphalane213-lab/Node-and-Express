@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.get("/",(req,res)=>{
+    req.send("Hello Express")
+})
+
 
 
  
