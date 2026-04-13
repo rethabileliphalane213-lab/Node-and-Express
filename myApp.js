@@ -15,8 +15,7 @@ app.get("/",(req,res)=>{
   res.sendFile(absolutePath)
 })
 
- 
-
+ app.use(express.static(__dirname + "/public"))
 
 
 
