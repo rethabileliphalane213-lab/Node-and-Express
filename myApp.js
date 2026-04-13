@@ -1,4 +1,4 @@
- require('dotenv').config()
+ require('dotenv').config("./secrete.env")
 let express = require('express');
 let app = express();
 console.log("Hello World")
