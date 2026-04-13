@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/",(req,res)=>{
-    req.send("Hello Express")
+    res.send("Hello Express")
 })
 
 
