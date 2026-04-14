@@ -66,6 +66,11 @@ app.post("/data",(req,res)=>{
 res.json(req.body)
 })
 
+app.post("/name",(req,res)=>{
+    const names=req.query.first
+  const last=req.query.last
+  res.json({name: `${names} ${last}`})
+})
 
 
 
