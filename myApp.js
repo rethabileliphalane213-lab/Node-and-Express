@@ -62,7 +62,7 @@ app.get("/name",(req,res)=>{
 bodyParser.urlencoded({extended:false})
 
 
-app.use((req,res)=>{
+app.post((req,res)=>{
 res.json(req.body)
 })
 
