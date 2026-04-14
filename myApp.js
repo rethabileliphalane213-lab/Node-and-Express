@@ -60,7 +60,7 @@ app.get("/name",(req,res)=>{
 
 
 app.use(bodyParser.urlencoded({extended:false}))
-app.use(express.json());
+
 
 app.post("/data",(req,res)=>{
 res.json(req.body)
