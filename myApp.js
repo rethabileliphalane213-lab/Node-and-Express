@@ -67,8 +67,8 @@ res.json(req.body)
 })
 
 app.post("/name",(req,res)=>{
-    const names=req.query.first
-  const last=req.query.last
+    const names=req.body.first
+  const last=req.body.last
   res.json({name: `${names} ${last}`})
 })
 
