@@ -66,12 +66,11 @@ app.post("/data",(req,res)=>{
 res.json(req.body)
 })
 
-app.post("/name",(req,res)=>{
-    const first=req.body.first
-  const last=req.body.last
-  res.json({name: `${first} ${last}`})
-})
-
+app.post("/name", (req, res) => {
+  const first = req.body.first
+  const last = req.body.last
+  res.json({ name: `${first} ${last}` });
+});
 
 
 
