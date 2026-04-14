@@ -52,9 +52,9 @@ app.get("/:word/echo",(req,res)=>{
 })
 
 app.get("/name",(req,res)=>{
-  const names=req.query.first
+  const first=req.query.first
   const last=req.query.last
-  res.json({name: `${names} ${last}`})
+  res.json({name: `${first} ${last}`})
 })
 
 
