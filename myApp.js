@@ -60,16 +60,16 @@ app.get("/name",(req,res)=>{
 
 
 app.use(bodyParser.urlencoded({extended:false}))
-
+app.use(express.json());
 
 app.post("/data",(req,res)=>{
 res.json(req.body)
 })
 
 app.post("/name",(req,res)=>{
-    const names=req.body.first
+    const first=req.body.first
   const last=req.body.last
-  res.json({name: `${names} ${last}`})
+  res.json({name: `${first} ${last}`})
 })
 
 
