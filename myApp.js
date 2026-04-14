@@ -1,4 +1,5 @@
 require('dotenv').config({ path: './secret.env' });
+let bodyParser=require("body-parser")
 let express = require('express');
 let app = express();
 console.log("Hello World")
@@ -58,10 +59,12 @@ app.get("/name",(req,res)=>{
 
 
 
+bodyParser.urlencoded({extended:false})
 
 
-
-
+app.use((req,res)=>{
+res.json(req.body)
+})
 
 
 
