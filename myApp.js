@@ -11,12 +11,21 @@ console.log("Hello World")
     res.send("Hello Express")
 })*/
 
+
+app.use((req,res,next)=>{
+  
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next()
+})
+
+app.use("/public",express.static(__dirname + "/public"))
+
+
 app.get("/",(req,res)=>{
   const absolutePath=__dirname + "/views/index.html" 
   res.sendFile(absolutePath)
    
 })
-app.use("/public",express.static(__dirname + "/public"))
 
 
 app.get("/json",(req,res)=>{
@@ -27,6 +36,13 @@ app.get("/json",(req,res)=>{
     res.json({"message": "Hello json"})
   }
   
+})
+app.get('/now',(req,res,next)=>{
+  const time=new Date().toString()
+  req.time=time
+  next()
+},(req,res)=>{
+  res.json({time: req.time})
 })
 
 
