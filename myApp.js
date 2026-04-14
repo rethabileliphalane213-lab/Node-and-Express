@@ -51,12 +51,6 @@ app.get("/:word/echo",(req,res)=>{
   res.json({echo: req.params.word})
 })
 
-app.get("/name",(req,res)=>{
-  const first=req.query.first
-  const last=req.query.last
-  res.json({name: `${first} ${last}`})
-})
-
 
 
 app.use(bodyParser.urlencoded({extended:false}))
@@ -65,6 +59,14 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.post("/data",(req,res)=>{
 res.json(req.body)
 })
+
+app.get("/name",(req,res)=>{
+  const first=req.query.first
+  const last=req.query.last
+  res.json({name: `${first} ${last}`})
+})
+
+
 
 app.post("/name", (req, res) => {
   const first = req.body.first
